@@ -14,6 +14,12 @@
 		7D4F74922D06BF8700A62D12 /* Finance_trackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F74912D06BF8700A62D12 /* Finance_trackerTests.swift */; };
 		7D4F749C2D06BF8700A62D12 /* Finance_trackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F749B2D06BF8700A62D12 /* Finance_trackerUITests.swift */; };
 		7D4F749E2D06BF8700A62D12 /* Finance_trackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F749D2D06BF8700A62D12 /* Finance_trackerUITestsLaunchTests.swift */; };
+		7D4F74AF2D06C0FA00A62D12 /* Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F74AE2D06C0FA00A62D12 /* Tap.swift */; };
+		7D4F74B12D06C13B00A62D12 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F74B02D06C13B00A62D12 /* Category.swift */; };
+		7D4F74B32D06C15700A62D12 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F74B22D06C15700A62D12 /* Transaction.swift */; };
+		7D4F74B52D06C17E00A62D12 /* TintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F74B42D06C17E00A62D12 /* TintColor.swift */; };
+		7D4F74B72D06C1A900A62D12 /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F74B62D06C1A900A62D12 /* ChartModel.swift */; };
+		7D4F74B92D06C1CF00A62D12 /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F74B82D06C1CF00A62D12 /* CustomCorners.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		7D4F74972D06BF8700A62D12 /* Finance-trackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Finance-trackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4F749B2D06BF8700A62D12 /* Finance_trackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finance_trackerUITests.swift; sourceTree = "<group>"; };
 		7D4F749D2D06BF8700A62D12 /* Finance_trackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finance_trackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7D4F74AE2D06C0FA00A62D12 /* Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tap.swift; sourceTree = "<group>"; };
+		7D4F74B02D06C13B00A62D12 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		7D4F74B22D06C15700A62D12 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		7D4F74B42D06C17E00A62D12 /* TintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintColor.swift; sourceTree = "<group>"; };
+		7D4F74B62D06C1A900A62D12 /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
+		7D4F74B82D06C1CF00A62D12 /* CustomCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +106,10 @@
 		7D4F747F2D06BF8400A62D12 /* Finance-tracker */ = {
 			isa = PBXGroup;
 			children = (
+				7D4F74AD2D06C01100A62D12 /* View */,
+				7D4F74AC2D06C00A00A62D12 /* Model */,
+				7D4F74AB2D06BFFE00A62D12 /* Constatnts */,
+				7D4F74AA2D06BFF100A62D12 /* Helpers */,
 				7D4F74802D06BF8400A62D12 /* Finance_trackerApp.swift */,
 				7D4F74822D06BF8400A62D12 /* ContentView.swift */,
 				7D4F74842D06BF8600A62D12 /* Assets.xcassets */,
@@ -125,6 +141,40 @@
 				7D4F749D2D06BF8700A62D12 /* Finance_trackerUITestsLaunchTests.swift */,
 			);
 			path = "Finance-trackerUITests";
+			sourceTree = "<group>";
+		};
+		7D4F74AA2D06BFF100A62D12 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7D4F74AB2D06BFFE00A62D12 /* Constatnts */ = {
+			isa = PBXGroup;
+			children = (
+				7D4F74B82D06C1CF00A62D12 /* CustomCorners.swift */,
+			);
+			path = Constatnts;
+			sourceTree = "<group>";
+		};
+		7D4F74AC2D06C00A00A62D12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D4F74AE2D06C0FA00A62D12 /* Tap.swift */,
+				7D4F74B02D06C13B00A62D12 /* Category.swift */,
+				7D4F74B22D06C15700A62D12 /* Transaction.swift */,
+				7D4F74B42D06C17E00A62D12 /* TintColor.swift */,
+				7D4F74B62D06C1A900A62D12 /* ChartModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7D4F74AD2D06C01100A62D12 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +307,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D4F74AF2D06C0FA00A62D12 /* Tap.swift in Sources */,
 				7D4F74832D06BF8400A62D12 /* ContentView.swift in Sources */,
 				7D4F74812D06BF8400A62D12 /* Finance_trackerApp.swift in Sources */,
+				7D4F74B72D06C1A900A62D12 /* ChartModel.swift in Sources */,
+				7D4F74B12D06C13B00A62D12 /* Category.swift in Sources */,
+				7D4F74B92D06C1CF00A62D12 /* CustomCorners.swift in Sources */,
+				7D4F74B52D06C17E00A62D12 /* TintColor.swift in Sources */,
+				7D4F74B32D06C15700A62D12 /* Transaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
