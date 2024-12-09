@@ -12,6 +12,7 @@ struct Finance_trackerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modelContainer(for: Transaction.self)
         }
     }
 }
