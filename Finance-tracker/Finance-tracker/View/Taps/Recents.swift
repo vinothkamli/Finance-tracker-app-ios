@@ -33,30 +33,46 @@ struct Recents: View {
                             Button {
                                 showFilterView = true
                             } label: {
-                                Text("\(format(date: startDate,format: "dd - MMM yy")) to \(format(date: endDate,format: "dd - MMM yy"))")
+                                Text("\(format(date: startDate, format: "dd - MMM yy")) to \(format(date: endDate, format: "dd - MMM yy"))")
                                     .font(.caption)
                                     .foregroundStyle(.gray)
                             }
-                            
                             .hSpacing(.leading)
-                                                        
+                            
+                            // Filtered Transaction View
                             FilterTransactionView(startDate: startDate, endDate: endDate) { filteredTransactions in
+                                
+                                // Total Income & Expense Card
                                 CardView(
                                     income: total(filteredTransactions, category: .income),
                                     expense: total(filteredTransactions, category: .expense)
                                 )
                                 
+                                // Custom Segment Control
                                 CustomSegmentControl()
                                     .padding(.bottom, 10)
                                 
-                                ForEach(filteredTransactions.filter({ $0.category == selectedCategory.rawValue })) { transaction in
-                                    NavigationLink(value: transaction) {
-                                        TransactionCardView(transaction: transaction)
+                                // Filtered Transactions for the selected category
+                                let categoryTransactions = filteredTransactions.filter { $0.category == selectedCategory.rawValue }
+                                
+                                if categoryTransactions.isEmpty {
+                                    // Show "No Data Found" Message
+                                    Text("No transactions found!")
+                                        .font(.headline)
+                                        .foregroundStyle(.gray)
+                                        .frame(maxWidth: .infinity, minHeight: 100)
+                                        .multilineTextAlignment(.center)
+                                        .padding()
+                                } else {
+                                    // Display Transaction Cards
+                                    ForEach(categoryTransactions) { transaction in
+                                        NavigationLink(value: transaction) {
+                                            TransactionCardView(transaction: transaction)
+                                        }
+                                        .buttonStyle(.plain)
                                     }
-                                    .buttonStyle(.plain)
                                 }
                             }
-                            
                             
                         } header: {
                             HeaderView(size)
@@ -72,10 +88,10 @@ struct Recents: View {
                 }
             }
             
+            // Filter View Overlay
             .overlay {
                 if showFilterView {
-                    DateFilterView(start: startDate, end: endDate, onSubmit: {
-                        start, end in
+                    DateFilterView(start: startDate, end: endDate, onSubmit: { start, end in
                         startDate = start
                         endDate = end
                         showFilterView = false
@@ -89,8 +105,9 @@ struct Recents: View {
         }
     }
     
+    // MARK: - Header View
     @ViewBuilder
-    func HeaderView(_ size: CGSize)-> some View {
+    func HeaderView(_ size: CGSize) -> some View {
         HStack(spacing: 10) {
             VStack(alignment: .leading, spacing: 10, content: {
                 Text("Welcome!")
@@ -104,7 +121,7 @@ struct Recents: View {
             })
             Spacer(minLength: 10)
             
-            NavigationLink() {
+            NavigationLink {
                 TransactionView()
             } label: {
                 Image(systemName: "plus")
@@ -122,7 +139,6 @@ struct Recents: View {
                 .scaleEffect(headerScale(size, proxy: geometryProxy), anchor: .topLeading)
         }
         .padding(.bottom, 8)
-        
         .background(
             VStack(spacing: 0) {
                 Rectangle()
@@ -134,11 +150,12 @@ struct Recents: View {
         )
     }
     
+    // MARK: - Header Scale (Optional)
     func headerScale(_ size: CGSize, proxy: GeometryProxy) -> CGFloat {
         return 1
     }
     
-    ///Custom Segment Control
+    // MARK: - Custom Segment Control
     @ViewBuilder
     func CustomSegmentControl() -> some View {
         HStack(spacing: 0) {
@@ -153,7 +170,6 @@ struct Recents: View {
                                 .matchedGeometryEffect(id: "ACTIVETAP", in: animation)
                         }
                     }
-                
                     .contentShape(.capsule)
                     .onTapGesture {
                         withAnimation(.snappy) {
@@ -167,7 +183,7 @@ struct Recents: View {
     }
 }
 
-
 #Preview {
     Recents()
 }
+
